@@ -11,19 +11,21 @@
 
 
        function computerPlay() {
-            const items=["Rock", "Paper", "Scissors"];
-            return items[Math.floor(Math.random()*items.length)];
-        }
-        computerPlay();
+           let num= Math.floor(Math.random() * 3);
+           if (num === 0) {
+               alert ("Rock")
+           }
+           else if (num === 1) {
+               alert ("Paper")
+           }
+           else {
+               alert ("Scissors")
 
-        function playRound(playerSelection,computerSelection) {
-            const playerSelection= prompt ("Play rock");
-            const computerSelection= computerPlay();
-            if ( playerSelection.toLowercase()== "rock") 
-        alert ("You Lose! Paper beats Rock");
-        }
-        playRound();
-        
+           }
+       }
+       computerPlay();
+
+       
 
      
      
