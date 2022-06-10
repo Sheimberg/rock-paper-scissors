@@ -24,8 +24,41 @@
            }
        }
        computerPlay();
-
        
+
+       function singleRound(playerSelection, computerSelection) {
+           playerSelection=prompt("Your turn");
+           if (playerSelection === computerSelection){
+           alert ("It's a tie, nobody wins");
+           }
+           else if ( playerSelection.toLowercase() === "rock" && computerSelection.toLowercase() === "paper"){
+               alert ("You lost, paper beats rock");
+           }
+           else if ( playerSelection.toLowercase() === "paper" && computerSelection.toLowercase() === "rock"){
+               alert ("You won, paper beats rock");
+           }
+           else if ( playerSelection.toLowercase() === "scissors" && computerSelection.toLowercase() === "paper"){
+               alert ("You won, scissors beats paper");
+           }
+           else if ( playerSelection.toLowercase() === "paper" && computerSelection.toLowercase() === "scissors"){
+               alert ("You lost, scissors beats paper");
+           }
+           else if ( playerSelection.toLowercase() === "rock" && computerSelection.toLowercase() === "scissors"){
+               alert ("You won, rock beats scissors");
+           }
+           else if ( playerSelection.toLowercase() === "scissors" && computerSelection.toLowercase() === "rock"){
+               alert ("You lost, rock beats scissors");
+           }
+           else {
+               alert ("error");
+           }
+
+
+       }
+       computerSelection=computerPlay();
+       
+
+
 
      
      
