@@ -14,9 +14,22 @@
             const items=["Rock", "Paper", "Scissors"];
             return items[Math.floor(Math.random()*items.length)];
         }
+        computerPlay();
+
+        function playRound(playerSelection,computerSelection) {
+            const playerSelection= prompt ("Play rock");
+            const computerSelection= computerPlay();
+            if ( playerSelection.toLowercase()== "rock") 
+        alert ("You Lose! Paper beats Rock");
+        }
+        playRound();
         
-        
-       
+
+     
+     
+
+
+     
 
     
     </script>
