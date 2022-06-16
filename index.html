@@ -13,13 +13,13 @@
        function computerPlay() {
            let num= Math.floor(Math.random() * 3);
            if (num === 0) {
-               alert ("Rock")
+               alert ("rock")
            }
            else if (num === 1) {
-               alert ("Paper")
+               alert ("paper")
            }
            else {
-               alert ("Scissors")
+               alert ("scissors")
 
            }
        }
@@ -28,34 +28,80 @@
 
        function singleRound(playerSelection, computerSelection) {
            if (playerSelection === computerSelection){
-           return ("It's a tie, nobody wins");
+           alert ("It's a tie, nobody wins");
+           return null;
            }
            else if ( playerSelection.toLowercase() === "rock" && computerSelection.toLowercase() === "paper"){
-               return ("You lost, paper beats rock");
+               alert ("You lost, paper beats rock");
+               return false;
            }
            else if ( playerSelection.toLowercase() === "paper" && computerSelection.toLowercase() === "rock"){
-               return ("You won, paper beats rock");
+               alert ("You won, paper beats rock");
+               return true;
            }
            else if ( playerSelection.toLowercase() === "scissors" && computerSelection.toLowercase() === "paper"){
-               return ("You won, scissors beats paper");
+               alert ("You won, scissors beats paper");
+               return true;
            }
            else if ( playerSelection.toLowercase() === "paper" && computerSelection.toLowercase() === "scissors"){
-               return ("You lost, scissors beats paper");
+               alert ("You lost, scissors beats paper");
+               return false;
            }
            else if ( playerSelection.toLowercase() === "rock" && computerSelection.toLowercase() === "scissors"){
-               return ("You won, rock beats scissors");
+               alert ("You won, rock beats scissors");
+               return true;
            }
            else if ( playerSelection.toLowercase() === "scissors" && computerSelection.toLowercase() === "rock"){
-               return ("You lost, rock beats scissors");
+               alert ("You lost, rock beats scissors");
+               return false;
            }
            else {
-               return ("error");
+               alert ("error");
+               return null;
            }
 
        }
 
        const playerSelection=prompt("Your turn");
        const computerSelection=computerPlay();
+
+       function game() {
+           let result;
+           let playerScore=0;
+           let computerScore=0;
+           for (let i = 0; i < 5; i++) {
+           result= singleRound(playerSelection, computerSelection);
+           if (result=("It's a tie, nobody wins")) {
+               alert("It's a tie, nobody wins"); 
+            }
+               else if (result="You lost, paper beats rock"){
+                   computerScore++;
+                   alert("You lost, paper beats rock")
+               }
+               else if (result=("You won, paper beats rock")){
+                   playerScore++;
+                   alert("You won, paper beats rock");
+               }
+               else if(result=("You won, scissors beats paper")){
+                   playerScore++;
+                   alert("You won, scissors beats paper");
+               }
+               else if(result=("You lost, scissors beats paper")){
+                   computerScore++;
+                   alert("You lost, scissors beats paper");
+               }
+               else if(result=("You won, rock beats scissors")){
+                   playerScore++;
+                   alert("You won, rock beats scissors");
+               }
+               else(result=("error")){
+                   alert("error");
+               }
+           
+
+
+       }
+    }
        
 
 
